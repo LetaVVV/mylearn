@@ -14,9 +14,6 @@ function greet(name) {
   return name;
 }
 greet(name);
-//шаг второй - рандомное число//
-
-//шаг третий - ввод пользователя//
 
 /**
  * 
@@ -25,7 +22,6 @@ greet(name);
  */
 const random_number = Math.floor(Math.random() * 20) + 0;
 function isEven(num) {
-
   while (true) {
     const input = prompt(`Введите число, ${name} `) ?? '-';
     const num = +input;
@@ -34,7 +30,7 @@ function isEven(num) {
       console.log("Вы выиграли!!");
       break;
     }
-    if (num == "stop") {
+    if (input === "stop") {
       console.log("Игра  остановлена");
       break;
     }
