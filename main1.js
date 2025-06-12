@@ -24,4 +24,18 @@ while (true) {
    isEven(num);
    continue;
 }
+
+
+/**
+ * @param {number} num 
+ */
+function* range(num) {
+   for (let i = 1; i <= num; i++)
+      yield i;
+}
+
+for (const a of range(3)) {
+   console.log(a);
+}
+
 // не понимаю почему мне в консоль выводит False при введении строкового значения, код в VSC работает//
