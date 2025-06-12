@@ -1,0 +1,14 @@
+{
+  "name": "main",
+  "private": true,
+  "scripts": {
+    "start": "bun run main.js",
+    "dev": "bun run --watch main.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
