@@ -56,6 +56,7 @@ function isEven(num) {
     }
     if (num < 0) {
       console.log("Введите число от 0 до 20");
+      continue;
     }
   }
 }
