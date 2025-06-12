@@ -1,5 +1,8 @@
 //игра угадай число от 0 до 20//
 //шаг первый - приветствие//
+//шаг второй - рандомное число//
+//шаг третий - ввод пользователя//
+//шаг четвертый - сравнение ввода//
 let name = '' + prompt("Напишите свое имя ");
 /**
  * @param {string} name 
@@ -30,7 +33,6 @@ function isEven(num) {
     if (num === random_number) {
       console.log("Вы выиграли!!");
       break;
-
     }
     if (num == "stop") {
       console.log("Игра  остановлена");
@@ -48,11 +50,15 @@ function isEven(num) {
       console.log("Ошибка: вы ввели не число.");
       continue;
     }
+    if (num > 20) {
+      console.log("Введите число от 0 до 20");
+      continue;
+    }
+    if (num < 0) {
+      console.log("Введите число от 0 до 20");
+    }
   }
 }
 isEven();
-
-
-
 console.log('Конец');
 
