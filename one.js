@@ -45,7 +45,6 @@ function isEven(num) {
   return Number(num) % 2 === 0;
 
 
-
 }
 
 while (true) {
@@ -66,6 +65,5 @@ while (true) {
   console.log(isEven(num));
 }
 
-// не понимаю почему мне в консоль выводит False при введении строкового значения, код в VSC работает//
-
 console.log('Конец программы');
+// В общем-то все получилось//
