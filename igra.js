@@ -30,7 +30,11 @@ function isEven(num) {
       console.log("Вы выиграли!!");
       break;
     }
-    if (num === input) {
+    if (input === "stop") {
+      console.log("Игра  остановлена");
+      break;
+    }
+    if (typeof (num) !== typeof (input)) {
       console.log("Ошибка: вы ввели не число.");
       continue;
     }
@@ -43,10 +47,6 @@ function isEven(num) {
       continue;
     }
 
-    if (input === "stop") {
-      console.log("Игра  остановлена");
-      break;
-    }
     if (num > random_number) {
       console.log("Вы ввели число больше! Попробуйте снова!");
       continue;
@@ -59,5 +59,5 @@ function isEven(num) {
 }
 isEven();
 console.log('Конец');
-// Почему не работает блок условий?//
+
 
