@@ -30,18 +30,6 @@ function isEven(num) {
       console.log("Вы выиграли!!");
       break;
     }
-    if (input === "stop") {
-      console.log("Игра  остановлена");
-      break;
-    }
-    if (num > random_number) {
-      console.log("Вы ввели число больше! Попробуйте снова!");
-      continue;
-    }
-    if (num < random_number) {
-      console.log("Вы ввели число меньше! Попробуйте снова!");
-      continue;
-    }
     if (num === input) {
       console.log("Ошибка: вы ввели не число.");
       continue;
@@ -54,8 +42,22 @@ function isEven(num) {
       console.log("Введите число от 0 до 20");
       continue;
     }
+
+    if (input === "stop") {
+      console.log("Игра  остановлена");
+      break;
+    }
+    if (num > random_number) {
+      console.log("Вы ввели число больше! Попробуйте снова!");
+      continue;
+    }
+    if (num < random_number) {
+      console.log("Вы ввели число меньше! Попробуйте снова!");
+      continue;
+    }
   }
 }
 isEven();
 console.log('Конец');
+// Почему не заботает блок условий?//
 
