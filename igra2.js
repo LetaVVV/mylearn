@@ -18,21 +18,19 @@ console.log(person.greet());
 console.log(anotherPerson.greet());
 
 let totalMovies = 0;
-function makeMovie() {
-  return (totalMovies++ % 2) + 1;
+while (totalMovies < 100) {
+  (totalMovies++ % 2) + 1;
 }
-makeMovie();
 
+
+const random_number = Math.floor(Math.random() * 20) + 0;
 /**
  * 
  * @param {number} num
  * @param {number} num2
- * @param {number} random_number
  */
-const random_number = Math.floor(Math.random() * 20) + 0;
-
 function isEven(num, num2) {
-  while ((makeMovie() % 2) === 0) {
+  while ((totalMovies % 2) === 0) {
     const input = prompt(`Введите число, ${person.name} `) ?? '-';
     const num = +input;
     if (num === random_number) {
@@ -44,7 +42,7 @@ function isEven(num, num2) {
       break;
     }
 
-    if (typeof (num) !== typeof (input)) {
+    if (typeof (num) == typeof (input)) {
       console.log("Ошибка: вы ввели не число.");
       continue;
     }
@@ -66,7 +64,7 @@ function isEven(num, num2) {
       continue;
     }
   }
-  while ((makeMovie() % 2) !== 0) {
+  while ((totalMovies % 2) !== 0) {
     const input2 = prompt(`Введите число, ${anotherPerson.name} `) ?? '-';
     const num2 = +input2;
 
@@ -79,7 +77,7 @@ function isEven(num, num2) {
       break;
     }
 
-    if (typeof (num2) !== typeof (input2)) {
+    if (typeof (num2) == typeof (input2)) {
       console.log("Ошибка: вы ввели не число.");
       continue;
     }
@@ -93,8 +91,6 @@ function isEven(num, num2) {
       console.log("Введите число от 0 до 20");
       continue;
     }
-
-
     if (num2 > random_number) {
       console.log("Вы ввели число больше! Попробуйте снова!");
       continue;
