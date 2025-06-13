@@ -34,7 +34,7 @@ function isEven(num) {
       console.log("Игра  остановлена");
       break;
     }
-    if (typeof (num) == typeof (input)) {
+    if (typeof (num) === typeof (input)) {
       console.log("Ошибка: вы ввели не число.");
       continue;
     }

@@ -23,6 +23,7 @@ while (totalMovies < 100) {
 }
 
 
+
 const random_number = Math.floor(Math.random() * 20) + 0;
 /**
  * 
