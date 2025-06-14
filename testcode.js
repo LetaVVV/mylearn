@@ -34,7 +34,7 @@ function makeMovie() {
    * @param {number} num 
    *
    */
-  function checkInput(num) {
+  () {
     if (num === random_number) {
       gameOver = true;
       return `Игрок ${currentPlayer} угадал число ${random_number}!`;
@@ -43,8 +43,8 @@ function makeMovie() {
     } else {
       return `Игрок ${currentPlayer}: ${input} - слишком много!`;
     }
-  }
-  checkInput(num);
+  };
+
 
   if (!gameOver) {
     currentPlayer = currentPlayer === 1 ? 2 : 1;
