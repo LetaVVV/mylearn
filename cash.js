@@ -1,4 +1,4 @@
-
+console.log(name('Введите имя'));
 /**
  * 
  * @param {string} message 
@@ -12,6 +12,7 @@ function name(message) {
   }
   return input;
 }
+
 /**
  * 
  * @param {string} message 
@@ -19,6 +20,7 @@ function name(message) {
  */
 function number(message) {
   let input;
+
 
   while (isNaN(input = +(prompt(message + ":") ?? "-"))) {
     console.error("Нужно ввести число ");
@@ -28,21 +30,28 @@ function number(message) {
 
 let steps = 0;
 
-let negativeNum = [];
-let positiveNum = [];
-while (true) {
-  let input = number(message);
-  if (Number(number(message)) > 0) {
-    positiveNum.push(number(message));
-    console.log(positiveNum.join(','));
-    break;
-  }
-  if (Number(number(message)) < 0) {
-    negativeNum.push(number(message));
-    console.log(negativeNum.join(","));
-    break;
-  }
-}
+
+let parceling = [];
+
+
+do {
+  let newinput = number("Введите сумму");
+  parceling[steps] = +(newinput);
+  steps++;
+  console.log("Баланс:" + " " + parceling.reduce((acc, num) => acc + num));
+} while (steps === parceling.length);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -29,20 +29,25 @@ function makeMovie() {
 
   let input = prompt(`Введите число`) ?? `-`;
   let num = +input;
-  /**
-   * 
-   * @param {number} num 
-   *
-   */
-  () {
+
+
+  while (true) {
+    let input = prompt(`Введите число`) ?? `-`;
+    let num = +input;
+
     if (num === random_number) {
       gameOver = true;
-      return `Игрок ${currentPlayer} угадал число ${random_number}!`;
+      console.log(`Игрок ${currentPlayer} угадал число ${random_number}!`);
+      break;
+
     } else if (num < random_number) {
-      return `Игрок ${currentPlayer}: ${input} - слишком мало!`;
+      console.log(`Игрок ${currentPlayer}: ${input} - слишком мало!`);
+      continue;
     } else {
-      return `Игрок ${currentPlayer}: ${input} - слишком много!`;
+      console.log(`Игрок ${currentPlayer}: ${input} - слишком много!`);
+      continue;
     }
+
   };
 
 
