@@ -16,11 +16,7 @@ function number(message) {
 }
 
 let person = {
-  name: "",
-  age: 0,
-  tg: "",
-  numberTph: 0,
-  constructor: function () {
+  constructor: function Person() {
     this.name = prompt("Введите имя");
     this.age = number("Введите возраст");
     this.tg = prompt("Введите ник в телеграмм");
@@ -38,7 +34,7 @@ do {
 } while (confirm("Вы хотите продолжить?"));
 
 while (confirm("Вы хотите просмотреть данные пользователей?")) {
-  let input = prompt("Введите команду: name, age, tg  или numberTph");
+  let input = prompt("Введите команду: name, age, tg, numberTph или profile");
   switch (input) {
     case 'name':
       for (let i = 0; i < people.length; i++) {
@@ -58,6 +54,12 @@ while (confirm("Вы хотите просмотреть данные польз
     case "numberTph":
       for (let i = 0; i < people.length; i++) {
         console.log(people[i].numberTph);
+      }
+      continue;
+
+    case "profile":
+      for (let i = 0; i < people.length; i++) {
+        console.log(people[i]);
       }
       continue;
 
