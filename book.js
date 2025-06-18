@@ -38,7 +38,7 @@ function number(message) {
  * @returns {string}
  */
 
-function tg() {
+function tg(message) {
   let input = "@" + prompt("Введите ник в телеграмм");
   return input;
 }
@@ -49,7 +49,7 @@ function tg() {
  * @returns {string}
  */
 
-function inputNumber() {
+function inputNumber(message) {
   let input = "+" + number("Введите номер телефона, без + ");
   return input;
 }
