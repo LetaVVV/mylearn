@@ -73,7 +73,7 @@ do {
 } while (confirm("Вы хотите продолжить?"));
 
 while (confirm("Вы хотите просмотреть данные пользователей?")) {
-  let input = prompt("Введите команду: name, age, tg, numberPhone или profile");
+  let input = prompt("Введите команду: name, age, tg, numberPhone, profile или exit");
   switch (input) {
     case 'name':
       for (let i = 0; i < people.length; i++) {
@@ -100,7 +100,11 @@ while (confirm("Вы хотите просмотреть данные польз
       for (let i = 0; i < people.length; i++) {
         console.log(people[i]);
       }
-      continue;
+      return people[i];
+
+
+    case "exit":
+      break;
 
     default: {
       console.error('Неверная команда');
@@ -108,6 +112,25 @@ while (confirm("Вы хотите просмотреть данные польз
     }
   }
 }
+
+while (confirm("Выхотите удалить данные?")) {
+  console.log('Данные всех пользователей:');
+  people.forEach(obj => {
+    Object.entries(obj).forEach(([key, value]) => {
+      //console.log(`Данные текущего ${people[i]} пользователя.`);
+      console.log(`&{key} ``:`` &{value}`);
+    });
+    console.log('---------');
+  }
+  );
+
+
+}
+
+
+
+
+
 console.log("Всего хорошего!");
 
 
