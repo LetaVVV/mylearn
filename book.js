@@ -4,7 +4,7 @@
  * @param {string} message 
  * @returns {string}
  */
-function inputname(message) {
+function getName(message) {
   let input;
 
   do {
@@ -22,15 +22,16 @@ function inputname(message) {
  * @param {string} message 
  * @returns {number}
  */
-function number(message) {
-  let input;
-  let inputNumber = isNaN(input = +(prompt(message + ":") ?? "-"));
+function getNumber(message) {
+  let inputNumber;
+  do {
+    let inputNumber = +(prompt(message + ":") ?? "-");
+    if (!isNaN(inputNumber)) return inputNumber;
 
-  while (inputNumber) {
     console.error("Нужно ввести число ");
-  }
-  return input;
+  } while (true);
 }
+
 
 /**
  * 
@@ -38,8 +39,8 @@ function number(message) {
  * @returns {string}
  */
 
-function tg(message) {
-  let input = "@" + prompt("Введите ник в телеграмм");
+function getTelegramNick(message) {
+  let input = "@" + prompt(message);
   return input;
 }
 
@@ -50,19 +51,20 @@ function tg(message) {
  */
 
 function inputNumber(message) {
-  let input = "+" + number("Введите номер телефона, без + ");
+  let input = "+" + getNumber(message);
   return input;
 }
 
 let person = {
   constructor: function Person() {
-    this.name = inputname("Введите имя");
-    this.age = number("Введите возраст");
-    this.tg = tg();
-    this.numberPhone = inputNumber();
+    this.name = getName("Введите имя");
+    this.age = getNumber("Введите возраст");
+    this.tg = getTelegramNick("Введите ник в телеграмм");
+    this.numberPhone = inputNumber("Введите номер телефона, без + ");
     return this;
   }
 };
+
 
 const people = [];
 
@@ -90,7 +92,7 @@ while (confirm("Вы хотите просмотреть данные польз
         console.log(people[i].tg);
       }
       continue;
-    case "numberTph":
+    case "numberPhone":
       for (let i = 0; i < people.length; i++) {
         console.log(people[i].numberPhone);
       }
@@ -112,17 +114,23 @@ while (confirm("Вы хотите просмотреть данные польз
   }
 }
 
-
+deleteusers:
 while (confirm("Выхотите удалить данные?")) {
   console.log('Данные всех пользователей:');
   console.table(people);
 
-
-  let user = number("Выберите пользователя, данные которго хотите удалить, по нумерации в таблице:");
+  let user = prompt("Выберите пользователя, данные которoго хотите удалить, по нумерации в таблице:");
   console.log(user);
-  people.splice(user, user);
+
+  if (user === "exit"):
+    break;
+  if (
+    people.splice(user, 1);
   console.log(`Удаление  пользователя ${user} прошло успешно.`);
-  continue;
+  continue deleteusers;
+
+
+
 }
 
 
