@@ -100,7 +100,6 @@ while (confirm("Вы хотите просмотреть данные польз
       for (let i = 0; i < people.length; i++) {
         console.log(people[i]);
       }
-      return people[i];
 
 
     case "exit":
@@ -113,18 +112,17 @@ while (confirm("Вы хотите просмотреть данные польз
   }
 }
 
+
 while (confirm("Выхотите удалить данные?")) {
   console.log('Данные всех пользователей:');
-  people.forEach(obj => {
-    Object.entries(obj).forEach(([key, value]) => {
-      //console.log(`Данные текущего ${people[i]} пользователя.`);
-      console.log(`&{key} ``:`` &{value}`);
-    });
-    console.log('---------');
-  }
-  );
+  console.table(people);
 
 
+  let user = number("Выберите пользователя, данные которго хотите удалить, по нумерации в таблице:");
+  console.log(user);
+  people.splice(user, user);
+  console.log(`Удаление  пользователя ${user} прошло успешно.`);
+  continue;
 }
 
 

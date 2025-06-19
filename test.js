@@ -8,13 +8,10 @@ const Person2 = { ...Person };
 
 
 let person = {
-  constructor: function Person() {
+  Person() {
     this.name = prompt("Введите имя");
-    this.age = number("Введите возраст");
-    this.tg = prompt("Введите ник в телеграмм");
-    this.numberTph = number("Введите номер телефона");
+
     return this;
   }
 };
-let person2 = { ...}
-
+console.log(this);
