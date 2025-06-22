@@ -119,13 +119,13 @@ while (confirm("Выхотите удалить данные?")) {
   console.log('Данные всех пользователей:');
   console.table(people);
 
-  let user = prompt("Выберите пользователя, данные которoго хотите удалить, по нумерации в таблице:");
+  let user = prompt("Выберите пользователя, данные которoго хотите удалить, по нумерации в таблице");
   console.log(user);
 
   if (user === "exit"):
     break;
-  if (
-    people.splice(user, 1);
+
+  if (people.splice(user, 1));
   console.log(`Удаление  пользователя ${user} прошло успешно.`);
   continue deleteusers;
 
