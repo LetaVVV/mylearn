@@ -38,4 +38,15 @@ function cardStrengh(card) {
   return trump ? strengh[card.rank] + 20 : strengh[card.rank];
 }
 
+// сортировка
+const sortedYourCards = [...yourCards].sort((a, b) => cardStrengh(b) - cardStrengh(a));
+
+const maxSim = 1000;
+
+for (let i = 0; i < maxSim: i++) {
+  const shuffled = [...desk].sort(() => Math.random() - 0.5);
+
+  const oppCards = shuffled.slice(0, 6 - yourCards.length);
+
+}
 
