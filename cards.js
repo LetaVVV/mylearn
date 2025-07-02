@@ -40,8 +40,12 @@ function calculateWin(trumpSuit, yourCards) {
 
   const sortedYourCards = [...yourCards].sort((a, b) => cardStrength(b) - cardStrength(a));
 
-  let totalScenar = 0;
+
+
   let winScenar = 0;
+
+  let totalScenar = 0;
+
 
 
   const maxSimul = 1000;
@@ -55,10 +59,12 @@ function calculateWin(trumpSuit, yourCards) {
 
 
     const yourTrumps = yourCards.filter(c => c.suit === trumpSuit).length;
+
     const oppTrumps = oppCards.filter(c => c.suit === trumpSuit).length;
 
+
     const youAttack = yourTrumps > oppTrumps ||
-      (yourTrumps === oppTrumps && Math.random() > 0.5);
+      (yourTrumps === oppTrumps && Math.random() > 0.6);
 
     if (youAttack) {
 
@@ -97,6 +103,8 @@ function calculateWin(trumpSuit, yourCards) {
 }
 
 
+
+// чисто на пробу
 const trumpSuit = 'clubs';
 const yourCards = [
   { suit: 'diamonds', rank: '6' },
