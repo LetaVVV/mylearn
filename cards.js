@@ -34,7 +34,7 @@ function calculateWin(trumpSuit, yourCards) {
     };
 
     const trump = card.suit === trumpSuit;
-    return trump ? strength[card.rank] + 20 : strength[card.rank];
+    return trump ? strength[card.rank] + 40 : strength[card.rank];
   }
 
 
@@ -48,7 +48,7 @@ function calculateWin(trumpSuit, yourCards) {
 
 
 
-  const maxSimul = 1000;
+  const maxSimul = 10;
 
   for (let i = 0; i < maxSimul; i++) {
 
@@ -58,13 +58,18 @@ function calculateWin(trumpSuit, yourCards) {
     const oppCards = shuffled.slice(0, 6 - yourCards.length);
 
 
+
+
     const yourTrumps = yourCards.filter(c => c.suit === trumpSuit).length;
 
     const oppTrumps = oppCards.filter(c => c.suit === trumpSuit).length;
 
 
+
+
     const youAttack = yourTrumps > oppTrumps ||
-      (yourTrumps === oppTrumps && Math.random() > 0.6);
+      (yourTrumps === oppTrumps && Math.random() > 0.5);
+
 
     if (youAttack) {
 
@@ -108,7 +113,7 @@ function calculateWin(trumpSuit, yourCards) {
 const trumpSuit = 'clubs';
 const yourCards = [
   { suit: 'diamonds', rank: '6' },
-  { suit: 'clubs', rank: 'Q' },
+  { suit: 'clubs', rank: '6' },
   { suit: 'spades', rank: '9' },
   { suit: 'hearts', rank: '7' },
   { suit: 'spades', rank: 'K' }
