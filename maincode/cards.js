@@ -50,15 +50,11 @@ function calculateWin(trumpSuit, yourCards) {
 
   const maxSimul = 10;
 
+  const shuffled = [...deck].sort(() => Math.random() - 0.5);
+  const oppCards = shuffled.slice(0, 6 - yourCards.length);
+
+
   for (let i = 0; i < maxSimul; i++) {
-
-    const shuffled = [...deck].sort(() => Math.random() - 0.5);
-
-
-    const oppCards = shuffled.slice(0, 6 - yourCards.length);
-
-
-
 
     const yourTrumps = yourCards.filter(c => c.suit === trumpSuit).length;
 
