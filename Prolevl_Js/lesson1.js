@@ -100,6 +100,12 @@ let users = [
   { name: "Сергей", email: "sergey@example.com", address: { city: "Сочи", street: "Горького" } }
 ];
 
+for (let i = 0; i < users.length; i++) {
+  const { name, email, address: { city } } = users[i];
+  console.log(`Имя: ${name}, Email: ${email},Город: ${city}`);
+}
+
+//вложенная деструктуризация
 
 //### Задача 9: Вложенные объекты в массиве
 //Выведите всех пользователей в формате:
@@ -110,6 +116,8 @@ let data = [
   { id: 2, value: "Banana" },
   { id: 3, value: "Cherry" }
 ];
+
+
 
 
 //### Задача 10: Создание вложенной структуры из массива
