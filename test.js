@@ -1,13 +1,23 @@
-let users = [
-  { name: "Анна", email: "anna@example.com", address: { city: "Казань", street: "Пушкина" } },
-  { name: "Виктор", email: "victor@example.com", address: { city: "Уфа", street: "Ленина" } },
-  { name: "Сергей", email: "sergey@example.com", address: { city: "Сочи", street: "Горького" } }
+let data = [
+  { id: 1, value: "Apple" },
+  { id: 2, value: "Banana" },
+  { id: 3, value: "Cherry" }
 ];
 
+const result = {};
 
-for (let i = 0; i < users.length; i++) {
-  const { name, email, address: { city } } = users[i];
-  console.log(`Имя: ${name}, Email: ${email},Город: ${city}`);
+for (let i = 0; i < data.length; i++) {
+  let item = data[i];
+  result[item.id] = { value: item.value };
 }
+console.log(result);
 
-//вложенная деструктуризация:
+
+//### Задача 10: Создание вложенной структуры из массива
+//Используя цикл, создайте объект, где ключи — это id,
+// а значения — это объекты с полем value. То есть результат должен быть следующим:
+//let result = {
+//1: { value: "Apple"; },
+//2: { value: "Banana"; },
+//3: { value: "Cherry"; }
+//};
