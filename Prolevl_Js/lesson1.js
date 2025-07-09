@@ -87,7 +87,7 @@ let product = {
 
 for (const key in product.details) {
   if (product.details.hasOwnProperty(key)) {
-    console.log('&{key} : &{product.details[key]');
+    console.log(`${key} : ${product.details[key]}`);
   }
 }
 
