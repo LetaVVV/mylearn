@@ -11,10 +11,10 @@ console.log(student);
 //Создайте объект `phone` с двумя свойствами: `brand` и`model`.Затем добавьте третье свойство `color` и присвойте ему значение.Выведите объект в консоль.
 
 const phone = {
-  brand: samsung,
+  brand: "samsung",
   model: 16,
 };
-phone.color = blue;
+phone.color = "blue";
 console.log(phone);
 
 
