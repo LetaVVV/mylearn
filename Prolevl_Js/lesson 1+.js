@@ -70,26 +70,92 @@ console.log(copyPerson);
 //Создайте объект device с полями type, brand, и model.
 // Проверьте, есть ли в объекте свойство brand и выведите соответствующее сообщение в консоль.
 
+const device = {
+  type: "phone",
+  brand: "IPhone",
+  model: 12345,
+};
+const monitoring = "brand" in device;
+
+if (monitoring) {
+  console.log(`В обьекте device есть свойство brand`);
+} else { console.log(`В обьекте device нет свойства brand`); }
 
 
 //### 16. Удаление нескольких свойств
 //Создайте объект profile с тремя свойствами: username, email, и password.
 // Удалите свойства email и password, затем выведите оставшийся объект в консоль.
 
+const profile = {
+  username: "leta",
+  email: "leta@mail.com",
+  password: 12345
+};
+console.log(profile);
+delete profile?.email;
+delete profile?.password;
+console.log(profile);
+
 //### 17. Вложенные массивы
 //Создайте объект playlist, который содержит название плейлиста(строка) и массив из объектов песен.
 // Каждый объект песни должен содержать свойства title и duration.
 // Выведите название первой песни в консоль.
 
+const playlist = {
+  name: "Summer mood",
+  songs: [
+    {
+      title: "Sailor Song",
+      duration: 3.20
+    },
+    {
+      title: "To Build A Home ",
+      duration: 2.90
+    }
+  ]
+};
+console.log(playlist.songs[0]?.title);
+
 //### 18. Итерация по ключам и значениям
 //Создайте объект fruit с тремя фруктами и их калорийностью.
 // Используйте цикл for...of для выведения каждого фрукта и его калорийности.
+
+const fruit = {
+  banana: 91,
+  apple: 47,
+  lemon: 34
+};
+for (const key of Object.keys(fruit)) {
+  console.log(`${key} : ${fruit[key]}`);
+};
 
 //### 19. Проверка типа значения свойства
 //Создайте объект profile, содержащий свойства age, isActive и name.
 // Проверьте, является ли тип свойства isActive логическим(boolean) и выведите результат в консоль.
 
+const profile = {
+  name: "Lena",
+  age: 30,
+  isActive: true
+};
+const monitoring = (typeof profile.isActive === 'boolean');
+
+if (monitoring) {
+  console.log("isActive является логичесским свойством");
+} else {
+  console.log("isActive не является логичесским свойством");
+};
+
 //### 20. Создание объекта с вычисляемыми свойствами
 //Создайте объект rectangle, у которого будут свойства width и height,
 //  и вычисляемое свойство area, равное произведению ширины и высоты.
 // Выведите значение площади в консоль.;
+
+const rectangle = {
+  width: 20,
+  height: 30,
+  get area() {
+    return this.height * this.width;
+  }
+};
+console.log(rectangle.area);
