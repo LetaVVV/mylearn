@@ -138,3 +138,25 @@ console.log(num(123));
 // Например, реализуйте рекурсивный алгоритм сортировки массива(например,
 //  сортировка вставками или quicksort).;
 
+/**
+ * 
+ * @param {number[]} array 
+ * @returns {number[]}
+ */
+
+function sort(array) {
+  if (array.length < 2)
+    return array;
+
+  for (let i = 1; i < array.length; i++) {
+    if (array[i - 1] > array[i]) {
+      const acc = array[i - 1];
+      array[i - 1] = array[i];
+      array[i] = acc;
+      return sort(array);
+    }
+  }
+
+  return array;
+}
+console.log(sort([3, 1, 4, 2]));
