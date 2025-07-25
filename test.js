@@ -1,17 +1,34 @@
-/**
- * @param {string} input
- * @returns {boolean}
- */
-function isPalindrom(input) {
-  if (input.length < 2)
-    return true;
+class Koordinates {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    return this;
+  }
+  createNumberCoord() {
+    const resultNum = [];
+    for (const xNum of this.x) {
+      for (const yNum of this.y) {
+        resultNum.push(parseInt(`${xNum}${yNum}`));
+      }
+    }
 
-  if (input.at(0) !== input.at(-1))
-    return false;
-
-  return isPalindrom(input.slice(1, -1));
+    return resultNum;
+  }
 }
 
-console.log(isPalindrom('rara'));
+
+const coords = new Koordinates([10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+  [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]);
+
+console.log(coords.createNumberCoord());
 
 
+const cell = {
+  cellCheckEmpty(index) {
+    if (coords[index] - (9 / 10) === coords[index] - 1) {
+      const empty = true;
+      return empty;
+    }
+    if (coords[index] === )
+  }
+};

@@ -99,7 +99,7 @@ console.log(isPalindrom('radar'));
 // Рекурсивно подсчитайте, сколько цифр содержит заданное число.Например, для числа 12345 результат — 5.;
 
 /**
- * @param {number} num
+ * @param {number} number
  */
 function num(number) {
   if (number === 0) {
